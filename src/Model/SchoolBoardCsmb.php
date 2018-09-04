@@ -2,6 +2,9 @@
 
 namespace Mindgeek\Model;
 
+use Mindgeek\Entity\Student;
+use SimpleXMLElement;
+
 /**
  * Class SchoolBoardCsmb
  * @package Mindgeek\Model
@@ -33,5 +36,23 @@ class SchoolBoardCsmb extends SchoolBoard
         }
 
         return array_sum($gradeList) / count($gradeList);
+    }
+
+    /**
+     * @param Student $student
+     * @param float $average
+     * @return string
+     */
+    public function getResult(Student $student, float $average) : string
+    {
+        $xml = new SimpleXMLElement("<?xml version=\"1.0\"?><root></root>");
+
+        $xml->addChild('id',            $student->getId());
+        $xml->addChild('name',          htmlspecialchars($student->getName()));
+        $xml->addChild('gradeList',     implode(';', $student->getGradeList()));
+        $xml->addChild('average',       $average);
+        $xml->addChild('finalResult',   ($average >= 7 ? self::FINAL_RESULT_PASS : self::FINAL_RESULT_FAIL));
+
+        return $xml->asXML();
     }
 }
