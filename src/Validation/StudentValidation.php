@@ -6,8 +6,19 @@ use Mindgeek\Entity\Student;
 use Mindgeek\Error\{StudentNameError, StudentGradeError, StudentSchoolBoardError};
 use Mindgeek\Model\SchoolBoard;
 
+/**
+ * Class StudentValidation
+ * @package Mindgeek\Validation
+ */
 class StudentValidation
 {
+    /**
+     * @param Student $student
+     * @return bool
+     * @throws StudentGradeError
+     * @throws StudentNameError
+     * @throws StudentSchoolBoardError
+     */
     public function isValid(Student $student)
     {
         if (empty(trim($student->getName())))
@@ -36,5 +47,7 @@ class StudentValidation
         if (!$student->getSchoolBoard() instanceof SchoolBoard) {
             throw new StudentSchoolBoardError();
         }
+
+        return true;
     }
 }

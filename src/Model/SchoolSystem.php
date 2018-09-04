@@ -18,7 +18,7 @@ class SchoolSystem
         return $student->getSchoolBoard()->calculateAverage($student->getGradeList());
     }
 
-    public function transfer()
+    public function transfer(Student $student, float $average)
     {
 
     }

@@ -15,8 +15,21 @@ $actionName     = $routes[$uri[1]]['actions'][$uri[2]];
 
 $controller = new $controllerName();
 
+/* -------------------- POST METHOD NOT IMPLEMENTED ----------------*/
+if ($controllerName == 'Mindgeek\Controller\StudentController') {   //
+    $controller->$actionName([                                      //
+        'id'            => 1,                                       //
+        'name'          => 'Maria Silva',                           //
+        'gradeList'     => [7, 4.5, 8],                             //
+        'schoolBoard'   => new \Mindgeek\Model\SchoolBoardCsm()     //
+    ]);                                                             //
+    exit;                                                           //
+}                                                                   //
+/* -------------------- POST METHOD NOT IMPLEMENTED ----------------*/
+
 if (isset($uri[3])) {
     $controller->$actionName($uri[3]);
 } else {
     $controller->$actionName();
 }
+

@@ -5,18 +5,31 @@ namespace Mindgeek\Controller;
 use Mindgeek\Entity\Student;
 use Mindgeek\Validation\StudentValidation;
 use Mindgeek\ViewHelper\ErrorViewHelper;
+use Mindgeek\Model\StudentModel;
 use Exception;
 
+/**
+ * Class StudentController
+ * @package Mindgeek\Controller
+ */
 class StudentController
 {
-    public function add() {
-        $student = new Student(1, 'Maria Silva', [7, 4.5, 8], new \Mindgeek\Model\SchoolBoardCsm());
-
-        $studentValidation = new StudentValidation();
+    /**
+     * @param array $studentPost
+     */
+    public function add(array $studentPost) {
+        $studentValidation  = new StudentValidation();
+        $studentModel       = new StudentModel();
+        $student            = new Student(
+            $studentPost['id'],
+            $studentPost['name'],
+            $studentPost['gradeList'],
+            $studentPost['schoolBoard']
+        );
 
         try {
             if ($studentValidation->isValid($student)) {
-                //TODO
+                $studentModel->add($student);
             }
         } catch (Exception $e) {
             ErrorViewHelper::error($e);

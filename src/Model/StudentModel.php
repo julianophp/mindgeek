@@ -5,13 +5,27 @@ namespace Mindgeek\Model;
 use Mindgeek\Entity\Student;
 use Mindgeek\Error\StudentNotFoundError;
 
+/**
+ * Class StudentModel
+ * @package Mindgeek\Model
+ */
 class StudentModel
 {
-    public function add()
+    /**
+     * @param Student $student
+     * @return bool
+     */
+    public function add(Student $student)
     {
         //TODO
+        return true;
     }
 
+    /**
+     * @param int $id
+     * @return Student
+     * @throws StudentNotFoundError
+     */
     public function get(int $id) : Student
     {
         $student = null;
