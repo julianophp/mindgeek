@@ -46,15 +46,14 @@ class Student
      * @param string $name
      * @param array $gradeList
      * @param string $schoolBoard
-     * @param string $finalResult
      */
-    public function __construct(int $id, string $name, array $gradeList, string $schoolBoard, string $finalResult)
+    public function __construct(int $id, string $name, array $gradeList, string $schoolBoard)
     {
         $this->id = $id;
         $this->name = $name;
         $this->gradeList = $gradeList;
         $this->schoolBoard = $schoolBoard;
-        $this->finalResult = $finalResult;
+        $this->finalResult = '';
     }
 
     /**
