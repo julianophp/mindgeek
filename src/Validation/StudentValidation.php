@@ -4,6 +4,7 @@ namespace Mindgeek\Validation;
 
 use Mindgeek\Entity\Student;
 use Mindgeek\Error\{StudentNameError, StudentGradeError, StudentSchoolBoardError};
+use Mindgeek\Model\SchoolBoard;
 
 class StudentValidation
 {
@@ -32,13 +33,8 @@ class StudentValidation
             throw new StudentGradeError();
         }
 
-        switch ($student->getSchoolBoard()) {
-            case Student::SCHOOL_BOARD_CSM:
-            case Student::SCHOOL_BOARD_CSMB:
-                break;
-
-            default:
-                throw new StudentSchoolBoardError();
+        if (!$student->getSchoolBoard() instanceof SchoolBoard) {
+            throw new StudentSchoolBoardError();
         }
     }
 }

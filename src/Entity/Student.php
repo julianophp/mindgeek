@@ -4,14 +4,14 @@ declare(strict_types = 1);
 
 namespace Mindgeek\Entity;
 
+use Mindgeek\Model\SchoolBoard;
+
 /**
  * Class Student
  * @package Mindgeek\Entity
  */
 class Student
 {
-    const SCHOOL_BOARD_CSM  = 'CSM';
-    const SCHOOL_BOARD_CSMB = 'CSMB';
     const FINAL_RESULT_PASS = 'PASS';
     const FINAL_RESULT_FAIL = 'FAIL';
 
@@ -31,7 +31,7 @@ class Student
     private $gradeList;
 
     /**
-     * @var string
+     * @var SchoolBoard
      */
     private $schoolBoard;
 
@@ -45,9 +45,9 @@ class Student
      * @param int $id
      * @param string $name
      * @param array $gradeList
-     * @param string $schoolBoard
+     * @param SchoolBoard $schoolBoard
      */
-    public function __construct(int $id, string $name, array $gradeList, string $schoolBoard)
+    public function __construct(int $id, string $name, array $gradeList, SchoolBoard $schoolBoard)
     {
         $this->id = $id;
         $this->name = $name;
@@ -105,17 +105,17 @@ class Student
     }
 
     /**
-     * @return string
+     * @return SchoolBoard
      */
-    public function getSchoolBoard(): string
+    public function getSchoolBoard(): SchoolBoard
     {
         return $this->schoolBoard;
     }
 
     /**
-     * @param string $schoolBoard
+     * @param SchoolBoard $schoolBoard
      */
-    public function setSchoolBoard(string $schoolBoard)
+    public function setSchoolBoard(SchoolBoard $schoolBoard)
     {
         $this->schoolBoard = $schoolBoard;
     }
