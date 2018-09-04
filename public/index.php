@@ -14,4 +14,9 @@ $controllerName = "Mindgeek\\Controller\\" . $routes[$uri[1]]['controller'];
 $actionName     = $routes[$uri[1]]['actions'][$uri[2]];
 
 $controller = new $controllerName();
-$controller->$actionName();
+
+if (isset($uri[3])) {
+    $controller->$actionName($uri[3]);
+} else {
+    $controller->$actionName();
+}
