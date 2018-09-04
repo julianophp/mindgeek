@@ -18,8 +18,21 @@ class SchoolSystem
         return $student->getSchoolBoard()->calculateAverage($student->getGradeList());
     }
 
+    /**
+     * @param Student $student
+     * @param float $average
+     * @return string
+     */
     public function transfer(Student $student, float $average)
     {
+        $result = $student->getSchoolBoard()->getResult($student, $average);
 
+        /* ---- TRANSFER TO SCHOOL BOARD --- */
+        /*                                   */
+        /*                TODO               */
+        /*                                   */
+        /* ----------------------------------*/
+
+        return $result;
     }
 }

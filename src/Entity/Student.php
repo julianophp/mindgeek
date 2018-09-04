@@ -12,9 +12,6 @@ use Mindgeek\Model\SchoolBoard;
  */
 class Student
 {
-    const FINAL_RESULT_PASS = 'PASS';
-    const FINAL_RESULT_FAIL = 'FAIL';
-
     /**
      * @var int
      */
@@ -36,11 +33,6 @@ class Student
     private $schoolBoard;
 
     /**
-     * @var string
-     */
-    private $finalResult;
-
-    /**
      * Student constructor.
      * @param int $id
      * @param string $name
@@ -53,7 +45,6 @@ class Student
         $this->name = $name;
         $this->gradeList = $gradeList;
         $this->schoolBoard = $schoolBoard;
-        $this->finalResult = '';
     }
 
     /**
@@ -118,21 +109,5 @@ class Student
     public function setSchoolBoard(SchoolBoard $schoolBoard)
     {
         $this->schoolBoard = $schoolBoard;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFinalResult(): string
-    {
-        return $this->finalResult;
-    }
-
-    /**
-     * @param string $finalResult
-     */
-    public function setFinalResult(string $finalResult)
-    {
-        $this->finalResult = $finalResult;
     }
 }

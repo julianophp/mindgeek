@@ -4,6 +4,7 @@ namespace Mindgeek\Controller;
 
 use Mindgeek\Model\SchoolSystem;
 use Mindgeek\Model\StudentModel;
+use Mindgeek\ViewHelper\JsonViewHelper;
 use Mindgeek\ViewHelper\ErrorViewHelper;
 use Exception;
 
@@ -24,8 +25,7 @@ class SchoolSystemController
             $student = $studentModel->get($idStudent);
             $average = $schoolSystem->calculateAverage($student);
 
-            echo $average;
-
+            JsonViewHelper::json($schoolSystem->transfer($student, $average));
         } catch (Exception $e) {
             ErrorViewHelper::error($e);
         }

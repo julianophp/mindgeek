@@ -16,7 +16,7 @@ $actionName     = $routes[$uri[1]]['actions'][$uri[2]];
 $controller = new $controllerName();
 
 /* -------------------- POST METHOD NOT IMPLEMENTED ----------------*/
-if ($controllerName == 'Mindgeek\Controller\StudentController') {   //
+if ($routes[$uri[1]]['controller'] == 'StudentController') {        //
     $controller->$actionName([                                      //
         'id'            => 1,                                       //
         'name'          => 'Maria Silva',                           //
