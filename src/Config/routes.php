@@ -3,13 +3,19 @@ return [
     'student' => [
         'controller' => 'StudentController',
         'actions'    => [
-            'add' => 'add'
+            'add' => [
+                'name'   => 'add',
+                'method' => 'POST'
+            ]
         ]
     ],
     'school-system' => [
         'controller' => 'SchoolSystemController',
         'actions'    => [
-            'transfer' => 'transfer'
+            'transfer' => [
+                'name'   => 'transfer',
+                'method' => 'GET'
+            ]
         ]
     ]
 ];

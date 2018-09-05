@@ -18,7 +18,7 @@ class ViewHelper
     {
         $contentType = 'Content-Type: application/json';
 
-        if (strpos($string, '<?xml version=\"1.0\"?>') !== false)
+        if (strpos($string, '<?xml') !== false)
         {
             $contentType = 'Content-Type: text/xml';
         }

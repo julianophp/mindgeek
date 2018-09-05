@@ -4,6 +4,7 @@ namespace Mindgeek\Model;
 
 use Mindgeek\Entity\Student;
 use Mindgeek\Error\StudentNotFoundError;
+use ReflectionClass;
 
 /**
  * Class StudentModel
@@ -18,7 +19,13 @@ class StudentModel
     public function add(Student $student)
     {
         //TODO
-        return true;
+
+        return json_encode([
+            'id'          => 1,
+            'name'        => $student->getName(),
+            'gradeList'   => implode(';', $student->getGradeList()),
+            'schoolBoard' => (new ReflectionClass($student->getSchoolBoard()))->getShortName()
+        ]);
     }
 
     /**

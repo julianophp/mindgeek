@@ -11,25 +11,21 @@ if (!isset($uri[2]) || !isset($routes[$uri[1]]) || !isset($routes[$uri[1]]['acti
 }
 
 $controllerName = "Mindgeek\\Controller\\" . $routes[$uri[1]]['controller'];
-$actionName     = $routes[$uri[1]]['actions'][$uri[2]];
+$actionName     = $routes[$uri[1]]['actions'][$uri[2]]['name'];
+$controller     = new $controllerName();
 
-$controller = new $controllerName();
+switch ($routes[$uri[1]]['actions'][$uri[2]]['method'])
+{
+    case 'GET':
+        if (isset($uri[3])) {
+            $controller->$actionName($uri[3]);
+        } else {
+            $controller->$actionName();
+        }
+        break;
 
-/* -------------------- POST METHOD NOT IMPLEMENTED ----------------*/
-if ($routes[$uri[1]]['controller'] == 'StudentController') {        //
-    $controller->$actionName([                                      //
-        'id'            => 1,                                       //
-        'name'          => 'Maria Silva',                           //
-        'gradeList'     => [7, 4.5, 8],                             //
-        'schoolBoard'   => new \Mindgeek\Model\SchoolBoardCsm()     //
-    ]);                                                             //
-    exit;                                                           //
-}                                                                   //
-/* -------------------- POST METHOD NOT IMPLEMENTED ----------------*/
-
-if (isset($uri[3])) {
-    $controller->$actionName($uri[3]);
-} else {
-    $controller->$actionName();
+    case 'POST':
+        $post = json_decode(file_get_contents('php://input'), true);
+        $controller->$actionName($post);
+        break;
 }
-

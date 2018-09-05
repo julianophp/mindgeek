@@ -16,7 +16,29 @@ Composer: https://getcomposer.org/download/
 # composer install
 ```
 
-## Run
+## Start Server
 ```
 # php -S localhost:8001 -t public/
+```
+
+## Get
+```
+http://localhost:8001/school-system/transfer/1
+http://localhost:8001/school-system/transfer/2
+http://localhost:8001/school-system/transfer/3
+```
+
+## Post
+```
+http://localhost:8001/student/add
+{
+    "name": "Maria Silva",
+    "gradeList": "7;9;8",
+    "schoolBoard": "CSM"
+}
+```
+
+## Tests
+```
+# php ./vendor/bin/phpunit
 ```
