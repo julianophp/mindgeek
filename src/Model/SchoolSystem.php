@@ -3,6 +3,8 @@
 namespace Mindgeek\Model;
 
 use Mindgeek\Entity\Student;
+use Mindgeek\Error\SchoolSystemTransferError;
+use Mindgeek\Log\Log;
 
 /**
  * Class SchoolSystem
@@ -22,6 +24,7 @@ class SchoolSystem
      * @param Student $student
      * @param float $average
      * @return string
+     * @throws SchoolSystemTransferError
      */
     public function transfer(Student $student, float $average)
     {
@@ -32,6 +35,12 @@ class SchoolSystem
         /*                TODO               */
         /*                                   */
         /* ----------------------------------*/
+
+        /* Simulating transmission failure */
+        if ($student->getId() == 4) {
+            Log::save('transmission failed');
+            throw new SchoolSystemTransferError();
+        }
 
         return $result;
     }

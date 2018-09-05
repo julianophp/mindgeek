@@ -51,6 +51,10 @@ class StudentModel
                 $student = new Student($id, 'Riomelda Lira', [7, 8], new \Mindgeek\Model\SchoolBoardCsmb());
                 break;
 
+            case 4:
+                $student = new Student($id, 'Carlos Lima', [1, 5, 9, 8], new \Mindgeek\Model\SchoolBoardCsm());
+                break;
+
             default:
                 throw new StudentNotFoundError();
         }

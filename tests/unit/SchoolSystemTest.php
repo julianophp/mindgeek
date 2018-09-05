@@ -48,17 +48,26 @@ class SchoolSystemTest extends TestCase
      */
     public function testTransfer()
     {
-        $student1 = new Student(1, 'Maria Silva',  [7, 4.5, 8], new SchoolBoardCsm());
-        $student2 = new Student(2, 'Pedro Santos', [7, 4.5, 8], new SchoolBoardCsmb());
-        $student3 = new Student(3, 'Marta Lira',   [7, 8],      new SchoolBoardCsmb());
+        $student1 = new Student(1, 'Maria Silva',    [7, 4.5, 8], new SchoolBoardCsm());
+        $student2 = new Student(2, 'Pedro Santos',   [7, 4.5, 8], new SchoolBoardCsmb());
+        $student3 = new Student(3, 'Marta Lira',     [7, 8],      new SchoolBoardCsmb());
+        $student4 = new Student(4, 'Rita de Paula',  [2, 1, 9],   new SchoolBoardCsm());
 
         $average1 = $this->schoolSystem->calculateAverage($student1);
         $average2 = $this->schoolSystem->calculateAverage($student2);
         $average3 = $this->schoolSystem->calculateAverage($student3);
+        $average4 = $this->schoolSystem->calculateAverage($student4);
 
         $result1 = $this->schoolSystem->transfer($student1, $average1);
         $result2 = $this->schoolSystem->transfer($student2, $average2);
         $result3 = $this->schoolSystem->transfer($student3, $average3);
+
+        try {
+            $this->schoolSystem->transfer($student4, $average4);
+        }
+        catch (Exception $e) {
+            $this->assertEquals((new ReflectionClass($e))->getShortName(), "SchoolSystemTransferError");
+        }
 
         $this->assertContains('"finalResult":"FAIL"', $result1);
         $this->assertContains('<finalResult>PASS</finalResult>', $result2);

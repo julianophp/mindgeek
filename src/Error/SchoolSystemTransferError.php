@@ -5,9 +5,9 @@ namespace Mindgeek\Error;
 use Exception;
 
 /**
- * Class StudentNameError
+ * Class SchoolSystemTransferError
  * @package Mindgeek\Error
  */
-class StudentNameError extends Exception
+class SchoolSystemTransferError extends Exception
 {
 }
