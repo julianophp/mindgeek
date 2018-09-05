@@ -21,19 +21,29 @@ Composer: https://getcomposer.org/download/
 # php -S localhost:8001 -t public/
 ```
 
-## Get
+## Get (SchoolSystem->transfer)
 ```
 http://localhost:8001/school-system/transfer/1
 http://localhost:8001/school-system/transfer/2
 http://localhost:8001/school-system/transfer/3
 ```
 
-## Post
+## Post (Student->add => Success)
 ```
 http://localhost:8001/student/add
 {
     "name": "Maria Silva",
     "gradeList": "7;9;8",
+    "schoolBoard": "CSM"
+}
+```
+
+## Post (Student->add => Fail)
+```
+http://localhost:8001/student/add
+{
+    "name": "Maria Silva",
+    "gradeList": "7;9;8;4;7;8;2",
     "schoolBoard": "CSM"
 }
 ```
