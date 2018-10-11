@@ -1,13 +1,13 @@
 <?php
 
-namespace Mindgeek\ViewHelper;
+namespace School\ViewHelper;
 
 use Exception;
 use ReflectionClass;
 
 /**
  * Class ViewHelper
- * @package Mindgeek\ViewHelper
+ * @package School\ViewHelper
  */
 class ViewHelper
 {
