@@ -1,12 +1,12 @@
 <?php
 
-namespace Mindgeek\Model;
+namespace School\Model;
 
-use Mindgeek\Entity\Student;
+use School\Entity\Student;
 
 /**
  * Class SchoolBoardCsm
- * @package Mindgeek\Model
+ * @package School\Model
  */
 class SchoolBoardCsm extends SchoolBoard
 {
