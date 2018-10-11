@@ -1,14 +1,14 @@
 <?php
 
-namespace Mindgeek\Validation;
+namespace School\Validation;
 
-use Mindgeek\Entity\Student;
-use Mindgeek\Error\{StudentNameError, StudentGradeError, StudentSchoolBoardError};
-use Mindgeek\Model\SchoolBoard;
+use School\Entity\Student;
+use School\Error\{StudentNameError, StudentGradeError, StudentSchoolBoardError};
+use School\Model\SchoolBoard;
 
 /**
  * Class StudentValidation
- * @package Mindgeek\Validation
+ * @package School\Validation
  */
 class StudentValidation
 {
