@@ -1,13 +1,13 @@
 <?php
 
-namespace Mindgeek\Model;
+namespace School\Model;
 
-use Mindgeek\Entity\Student;
+use School\Entity\Student;
 use SimpleXMLElement;
 
 /**
  * Class SchoolBoardCsmb
- * @package Mindgeek\Model
+ * @package School\Model
  */
 class SchoolBoardCsmb extends SchoolBoard
 {
