@@ -1,10 +1,10 @@
 <?php
 
-namespace Mindgeek\Log;
+namespace School\Log;
 
 /**
  * Class Log
- * @package Mindgeek\Log
+ * @package School\Log
  */
 class Log
 {
