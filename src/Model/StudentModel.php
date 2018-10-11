@@ -1,14 +1,14 @@
 <?php
 
-namespace Mindgeek\Model;
+namespace School\Model;
 
-use Mindgeek\Entity\Student;
-use Mindgeek\Error\StudentNotFoundError;
+use School\Entity\Student;
+use School\Error\StudentNotFoundError;
 use ReflectionClass;
 
 /**
  * Class StudentModel
- * @package Mindgeek\Model
+ * @package School\Model
  */
 class StudentModel
 {
