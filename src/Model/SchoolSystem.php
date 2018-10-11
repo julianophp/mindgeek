@@ -1,14 +1,14 @@
 <?php
 
-namespace Mindgeek\Model;
+namespace School\Model;
 
-use Mindgeek\Entity\Student;
-use Mindgeek\Error\SchoolSystemTransferError;
-use Mindgeek\Log\Log;
+use School\Entity\Student;
+use School\Error\SchoolSystemTransferError;
+use School\Log\Log;
 
 /**
  * Class SchoolSystem
- * @package Mindgeek\Model
+ * @package School\Model
  */
 class SchoolSystem
 {
