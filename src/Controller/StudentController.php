@@ -1,18 +1,18 @@
 <?php
 
-namespace Mindgeek\Controller;
+namespace School\Controller;
 
-use Mindgeek\Entity\Student;
-use Mindgeek\Validation\StudentValidation;
-use Mindgeek\ViewHelper\ViewHelper;
-use Mindgeek\Model\StudentModel;
-use Mindgeek\Model\SchoolBoardCsm;
-use Mindgeek\Model\SchoolBoardCsmb;
+use School\Entity\Student;
+use School\Validation\StudentValidation;
+use School\ViewHelper\ViewHelper;
+use School\Model\StudentModel;
+use School\Model\SchoolBoardCsm;
+use School\Model\SchoolBoardCsmb;
 use Exception;
 
 /**
  * Class StudentController
- * @package Mindgeek\Controller
+ * @package School\Controller
  */
 class StudentController
 {
