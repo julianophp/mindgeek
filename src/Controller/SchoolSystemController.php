@@ -1,15 +1,15 @@
 <?php
 
-namespace Mindgeek\Controller;
+namespace School\Controller;
 
-use Mindgeek\Model\SchoolSystem;
-use Mindgeek\Model\StudentModel;
-use Mindgeek\ViewHelper\ViewHelper;
+use School\Model\SchoolSystem;
+use School\Model\StudentModel;
+use School\ViewHelper\ViewHelper;
 use Exception;
 
 /**
  * Class SchoolSystemController
- * @package Mindgeek\Controller
+ * @package School\Controller
  */
 class SchoolSystemController
 {
