@@ -10,7 +10,7 @@ if (!isset($uri[2]) || !isset($routes[$uri[1]]) || !isset($routes[$uri[1]]['acti
     exit;
 }
 
-$controllerName = "Mindgeek\\Controller\\" . $routes[$uri[1]]['controller'];
+$controllerName = "School\\Controller\\" . $routes[$uri[1]]['controller'];
 $actionName     = $routes[$uri[1]]['actions'][$uri[2]]['name'];
 $controller     = new $controllerName();
 
