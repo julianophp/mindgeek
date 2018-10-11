@@ -1,10 +1,10 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Mindgeek\Entity\Student;
-use Mindgeek\Model\SchoolSystem;
-use Mindgeek\Model\SchoolBoardCsm;
-use Mindgeek\Model\SchoolBoardCsmb;
+use School\Entity\Student;
+use School\Model\SchoolSystem;
+use School\Model\SchoolBoardCsm;
+use School\Model\SchoolBoardCsmb;
 
 /**
  * Class SchoolSystemTest
