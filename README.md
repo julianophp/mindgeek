@@ -1,4 +1,4 @@
-# MindGeek
+# School System
 Testing for Backend PHP Developer
 ```
 Author: Juliano Mesquita dos Santos
