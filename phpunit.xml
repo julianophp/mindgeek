@@ -4,7 +4,7 @@
          verbose="true"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Mindgeek Tests">
+        <testsuite name="School Tests">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
