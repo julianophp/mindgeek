@@ -1,14 +1,13 @@
 <?php
-
 declare(strict_types = 1);
 
-namespace Mindgeek\Entity;
+namespace School\Entity;
 
-use Mindgeek\Model\SchoolBoard;
+use School\Model\SchoolBoard;
 
 /**
  * Class Student
- * @package Mindgeek\Entity
+ * @package School\Entity
  */
 class Student
 {
