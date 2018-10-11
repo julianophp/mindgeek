@@ -1,12 +1,12 @@
 <?php
 
-namespace Mindgeek\Error;
+namespace School\Error;
 
 use Exception;
 
 /**
  * Class StudentGradeError
- * @package Mindgeek\Error
+ * @package School\Error
  */
 class StudentGradeError extends Exception
 {
