@@ -40,19 +40,19 @@ class StudentModel
         switch ($id)
         {
             case 1:
-                $student = new Student($id, 'Jocastra Silva', [7, 4.5, 8], new \Mindgeek\Model\SchoolBoardCsm());
+                $student = new Student($id, 'Jocastra Silva', [7, 4.5, 8], new \School\Model\SchoolBoardCsm());
                 break;
 
             case 2:
-                $student = new Student($id, 'Lutenilda Santos', [7, 4.5, 8], new \Mindgeek\Model\SchoolBoardCsmb());
+                $student = new Student($id, 'Lutenilda Santos', [7, 4.5, 8], new \School\Model\SchoolBoardCsmb());
                 break;
 
             case 3:
-                $student = new Student($id, 'Riomelda Lira', [7, 8], new \Mindgeek\Model\SchoolBoardCsmb());
+                $student = new Student($id, 'Riomelda Lira', [7, 8], new \School\Model\SchoolBoardCsmb());
                 break;
 
             case 4:
-                $student = new Student($id, 'Carlos Lima', [1, 5, 9, 8], new \Mindgeek\Model\SchoolBoardCsm());
+                $student = new Student($id, 'Carlos Lima', [1, 5, 9, 8], new \School\Model\SchoolBoardCsm());
                 break;
 
             default:
