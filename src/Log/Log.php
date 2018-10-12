@@ -14,11 +14,13 @@ class Log
      */
     public static function save($msg)
     {
-        if (!is_dir("../log")) {
+        $logDir = dirname(__DIR__) . "/../log";
+
+        if (!is_dir($logDir)) {
             return false;
         }
 
-        $f = fopen("../log/log.txt", "a+");
+        $f = fopen(sprintf("%s/log.txt", $logDir), "a+");
         fwrite($f, sprintf('%s %s %s', date('Y-m-d H:i:s'), $msg, PHP_EOL));
         fclose($f);
 
